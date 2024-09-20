@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espresso - Heart of Foodies</title>
+    <link rel="stylesheet" href="2nddesign.css">
+</head>
+<body>
+    <header>
+        <h1>Espresso</h1>
+    </header>
+
+    <!-- Espresso Product Section -->
+    <section class="product-section">
+        <div class="slider">
+            <img src="images\ec178d83e5f597b162cda1e60cb64194.jpg" alt="Espresso">
+            <img src="images\ec178d83e5f597b162cda1e60cb64194.jpg">
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+        </div>
+        <div class="product-details">
+            <h2>Rich Espresso</h2>
+            <p>A rich, smooth, and full-bodied espresso, freshly brewed with the finest coffee beans for the perfect shot of energy.</p>
+            <p class="price"><strong>Price: $5</strong></p>
+            <button class="order-button" onclick="orderNow()">Order Now</button>
+        </div>
+    </section>
+
+    <!-- Recommended Products Section -->
+    <section class="recommendations-section">
+        <h3>You may also like:</h3>
+        <div class="recommendations">
+            <div class="recommendation-item">
+                <img src="latte_image.jpg" alt="Latte">
+                <p><a href="latte.html">Latte</a></p>
+            </div>
+            <div class="recommendation-item">
+                <img src="cappuccino_image.jpg" alt="Cappuccino">
+                <p><a href="cappuccino.html">Cappuccino</a></p>
+            </div>
+            <div class="recommendation-item">
+                <img src="macchiato_image.jpg" alt="Macchiato">
+                <p><a href="macchiato.html">Macchiato</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function orderNow() {
+            alert("Espresso added to your cart!");
+        }
+    </script>
+</body>
+</html>

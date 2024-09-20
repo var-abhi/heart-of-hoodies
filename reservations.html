@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations | Heart of Foodies</title>
+    <link rel="stylesheet" href="2nddesign.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <img src="images/download.png" alt="Heart of Foodies Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="2ndbase.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservations.html" class="active">Reservations</a></li>
+                <li><a href="special_offers.html">Special Offers</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Reservation Section -->
+    <section id="reservations-page">
+        <div class="container">
+            <h2>Reserve Your Table</h2>
+            <p>Fill in the details below to book a table at Heart of Foodies!</p>
+
+            <form id="reservation-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Reservation Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Reservation Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="people">Number of People</label>
+                    <input type="number" id="people" name="people" min="1" max="20" placeholder="Number of Guests" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Reserve Now</button>
+            </form>
+
+            <div id="confirmation-message" style="display:none;">
+                <h3>Thank you for your reservation!</h3>
+                <p>We will contact you shortly to confirm your booking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('reservation-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form submission
+
+            // Hide the form and show confirmation message
+            document.getElementById('reservation-form').style.display = 'none';
+            document.getElementById('confirmation-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

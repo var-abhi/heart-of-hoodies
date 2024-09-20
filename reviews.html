@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | Heart of Foodies</title>
+    <link rel="stylesheet" href="2nddesign.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <img src="images/download.png" alt="Heart of Foodies Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="2ndbase.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="special_offers.html">Special Offers</a></li>
+                <li><a href="reviews.html" class="active">Reviews</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews-page">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div id="reviews-list">
+                <!-- Example Reviews -->
+                <div class="review">
+                    <h4>John Doe</h4>
+                    <p>"Great food and amazing atmosphere! Will definitely visit again."</p>
+                    <span class="rating">Rating: 5/5</span>
+                </div>
+
+                <div class="review">
+                    <h4>Jane Smith</h4>
+                    <p>"Loved the dessert combo! The service was quick and friendly."</p>
+                    <span class="rating">Rating: 4.5/5</span>
+                </div>
+
+                <!-- More reviews can be dynamically added here -->
+            </div>
+
+            <!-- Review Submission Form -->
+            <h3>Submit Your Review</h3>
+            <form id="review-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rating">Rating (1 to 5)</label>
+                    <input type="number" id="rating" name="rating" min="1" max="5" placeholder="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="review-text">Your Review</label>
+                    <textarea id="review-text" name="review-text" placeholder="Write your review here..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+
+            <div id="confirmation-message" style="display:none;">
+                <h3>Thank you for your review!</h3>
+                <p>We appreciate your feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Form Submission -->
+    <script>
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form submission
+
+            // Get review data
+            const name = document.getElementById('name').value;
+            const rating = document.getElementById('rating').value;
+            const reviewText = document.getElementById('review-text').value;
+
+            // Create a new review element
+            const reviewDiv = document.createElement('div');
+            reviewDiv.classList.add('review');
+            reviewDiv.innerHTML = '<h4>' + name + '</h4>' +
+                                  '<p>"' + reviewText + '"</p>' +
+                                  '<span class="rating">Rating: ' + rating + '/5</span>';
+
+            // Add the new review to the reviews list
+            document.getElementById('reviews-list').appendChild(reviewDiv);
+
+            // Clear the form and show a confirmation message
+            document.getElementById('review-form').style.display = 'none';
+            document.getElementById('confirmation-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
